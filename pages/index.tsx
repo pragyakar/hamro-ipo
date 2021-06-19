@@ -28,6 +28,11 @@ const Home = (props: IHomeProps & IAppState) => {
 
 export const getServerSideProps = async (): Promise<GetServerSidePropsResult<IHomeProps>> => {
   const activeIpos = await getActiveIPOs();
+  activeIpos.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1; 
+    return 0; 
+  });
   return {
     props: {
       activeIpos,
