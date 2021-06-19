@@ -10,7 +10,7 @@ const Layout = (props: ILayoutProps) => {
   return (
     <div className="layout">
       <SiteHead />
-      {children}
+      <div className="main">{children}</div>
       <Footer />
     </div>
   );
