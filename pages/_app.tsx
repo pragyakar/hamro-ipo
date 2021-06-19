@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import { IActiveIPO } from "../services/iporesult";
 
 export interface IAppState {
-  selecteedIpo: IActiveIPO;
+  selectedIpo: IActiveIPO;
   setSelectedIpo: (ipo: IActiveIPO) => void;
 }
 
