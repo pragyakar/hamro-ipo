@@ -13,9 +13,9 @@ export interface IAppState {
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [selectedIpo, setSelectedIpo] = useState<string>("");
-
+  
   const router = useRouter();
+  const [selectedIpo, setSelectedIpo] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {

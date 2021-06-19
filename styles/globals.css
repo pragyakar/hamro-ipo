@@ -9,4 +9,6 @@
 /* Local imports */
 @import url(components/logo.css);
 @import url(components/navbar.css);
+@import url(components/ipo-list.css);
 @import url(pages/main.css);
+@import url(pages/home.css);

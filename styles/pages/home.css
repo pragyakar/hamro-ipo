@@ -1,0 +1,4 @@
+.home-container {
+  @apply flex flex-col;
+  align-items: center;
+}

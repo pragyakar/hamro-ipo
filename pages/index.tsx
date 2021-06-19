@@ -3,6 +3,7 @@ import { GetServerSidePropsResult } from "next";
 
 import { IAppState } from "./_app";
 import { getActiveIPOs, IActiveIPO } from "../services/getActiveIPOs";
+import IpoList from "../components/IpoList";
 
 interface IHomeProps {
   activeIpos: IActiveIPO[];
@@ -18,15 +19,9 @@ const Home = (props: IHomeProps & IAppState) => {
   };
 
   return (
-    <div>
+    <div className="home-container">
       {!activeIpos.length && <p>No Active IPOs</p>}
-      {activeIpos.map((ipo, index) => {
-        return (
-          <p key={index} onClick={() => handleIpoClick(ipo)}>
-            {ipo.name}
-          </p>
-        );
-      })}
+      {!!activeIpos.length && <IpoList ipoList={activeIpos} handleIpoClick={handleIpoClick} />}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   padding: 20px;
-  @apply bg-gray-50;
+  @apply bg-white;
   @apply font-montserrat;
   @apply fixed top-0;
 }
