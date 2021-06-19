@@ -1,13 +1,9 @@
-import Head from 'next/head'
+import PageHead from '../components/SiteHead'
 
 const Home = () => {
   return (
     <div>
-      <Head>
-        <title>Hamro IPO</title>
-        <meta name="description" content="Check NEPSE IPO results in bulk" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead />
       <main>
         <p>Hamro IPO</p>
       </main>
