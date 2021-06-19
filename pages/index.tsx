@@ -1,20 +1,25 @@
 import { GetServerSidePropsResult } from "next";
+
+import { IAppState } from "./_app";
 import { getActiveIPOs, IActiveIPO } from "../services/iporesult";
-import handleApiError from "../utils/handleApiError";
 
 interface IHomeProps {
   activeIpos: IActiveIPO[];
 }
 
-const Home = (props: IHomeProps) => {
-  const { activeIpos } = props;
-
+const Home = (props: IHomeProps & IAppState) => {
+  const { activeIpos, setSelectedIpo } = props;
   return (
     <div>
       <main>
         <p>Hamro IPO</p>
+        {!activeIpos.length && <p>No Active IPOs</p>}
         {activeIpos.map((ipo, index) => {
-          return <p key={index}>{ipo.name}</p>
+          return (
+            <p key={index} onClick={() => setSelectedIpo(ipo)}>
+              {ipo.name}
+            </p>
+          );
         })}
       </main>
     </div>
@@ -22,18 +27,12 @@ const Home = (props: IHomeProps) => {
 };
 
 export const getServerSideProps = async (): Promise<GetServerSidePropsResult<IHomeProps>> => {
-  try {
-    const activeIpos = await getActiveIPOs();
-
-    return {
-      props: { activeIpos },
-    };
-  } catch (error) {
-    handleApiError(error);
-    return {
-      props: { activeIpos: [] },
-    };
-  }
+  const activeIpos = await getActiveIPOs();
+  return {
+    props: { 
+      activeIpos,
+    },
+  };
 };
 
 export default Home;

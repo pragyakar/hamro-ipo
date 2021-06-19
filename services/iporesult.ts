@@ -1,4 +1,5 @@
 import axios from "axios";
+import handleApiError from "../utils/handleApiError";
 
 interface IAPIReponse {
   success: boolean;
@@ -32,6 +33,7 @@ export const getActiveIPOs = async (): Promise<IActiveIPO[]> => {
     return dummyReponse.body;
     // return data.body;
   } catch (error) {
+    handleApiError(error);
     throw new Error(error);
   }
 };
