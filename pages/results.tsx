@@ -1,16 +1,24 @@
 import { GetServerSideProps, GetServerSidePropsResult } from "next";
+import { CONFIG } from "../config";
+import { checkResult, IPeople, IResult } from "../services/checkResult";
 import { IAppState } from "./_app";
 
 interface IResultsProps {
-  ipoResult: any;
+  ipoResult: IResult[];
 }
 
 const Results = (props: IResultsProps & IAppState) => {
-  console.log('@pragyakar props', props);
   const { selectedIpo, ipoResult } = props;
   return (
     <div className="">
       <h1>{selectedIpo.name}</h1>
+      {ipoResult.map((people, index) => {
+        return (
+          <p key={index}>
+            {people.name}: {people.result ? "Payo" : "Payena"}
+          </p>
+        );
+      })}
     </div>
   );
 };
@@ -18,9 +26,12 @@ const Results = (props: IResultsProps & IAppState) => {
 export const getServerSideProps: GetServerSideProps = async (
   params
 ): Promise<GetServerSidePropsResult<IResultsProps>> => {
-  const scrip = params.query.scrip;
+  const companyShareId = params.query.i || "";
+  const people: IPeople[] = CONFIG.boids;
+  const ipoResult = await checkResult(companyShareId, people);
+
   return {
-    props: { ipoResult: null },
+    props: { ipoResult },
   };
 };
 

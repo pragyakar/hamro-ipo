@@ -1,7 +1,7 @@
 import axios from "axios";
 import handleApiError from "../utils/handleApiError";
 
-interface IAPIReponse {
+export interface IAPIResponse {
   success: boolean;
   body: IActiveIPO[];
   message: string;

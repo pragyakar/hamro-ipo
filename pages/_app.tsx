@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 
 import "../styles/globals.css";
 import Layout from "../components/Layout";
-import { IActiveIPO } from "../services/iporesult";
+import { IActiveIPO } from "../services/getActiveIPOs";
 
 export interface IAppState {
   selectedIpo: IActiveIPO;

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { GetServerSidePropsResult } from "next";
 
 import { IAppState } from "./_app";
-import { getActiveIPOs, IActiveIPO } from "../services/iporesult";
+import { getActiveIPOs, IActiveIPO } from "../services/getActiveIPOs";
 
 interface IHomeProps {
   activeIpos: IActiveIPO[];
@@ -15,7 +15,7 @@ const Home = (props: IHomeProps & IAppState) => {
 
   const handleIpoClick = (ipo: IActiveIPO) => {
     setSelectedIpo(ipo);
-    router.push(`/results?scrip=${ipo.scrip}`);
+    router.push(`/results?i=${ipo.id}&s=${ipo.scrip}`);
   };
 
   return (
