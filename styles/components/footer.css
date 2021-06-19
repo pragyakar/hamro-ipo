@@ -13,6 +13,6 @@
   @apply h-4;
   @apply w-4;
   @apply mb-1;
-  @apply text-red-400;
+  @apply text-blue-400;
   display: inline-block;
 }
