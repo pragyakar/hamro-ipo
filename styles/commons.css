@@ -1,0 +1,8 @@
+.link {
+  @apply text-blue-400;
+  @apply underline;
+}
+
+.link:hover {
+  @apply text-blue-500;
+}

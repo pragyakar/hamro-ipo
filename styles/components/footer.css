@@ -1,0 +1,18 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  @apply p-5;
+  @apply text-center;
+  @apply bg-white;
+  @apply text-gray-600;
+  @apply font-light;
+}
+
+.footer__heart {
+  @apply h-4;
+  @apply w-4;
+  @apply mb-1;
+  @apply text-red-400;
+  display: inline-block;
+}

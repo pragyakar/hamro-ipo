@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import SiteHead from "./SiteHead";
 
 interface ILayoutProps {
@@ -10,6 +11,7 @@ const Layout = (props: ILayoutProps) => {
     <div className="layout">
       <SiteHead />
       {children}
+      <Footer />
     </div>
   );
 };
