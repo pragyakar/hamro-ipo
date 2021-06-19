@@ -1,4 +1,12 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
 /* Tailwind imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Local imports */
+@import url(components/logo.css);
+@import url(components/navbar.css);
+@import url(pages/main.css);

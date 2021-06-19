@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { GetServerSidePropsResult } from "next";
 
 import { IAppState } from "./_app";
@@ -9,7 +9,6 @@ interface IHomeProps {
 }
 
 const Home = (props: IHomeProps & IAppState) => {
-
   const router = useRouter();
   const { activeIpos, setSelectedIpo } = props;
 
@@ -20,17 +19,14 @@ const Home = (props: IHomeProps & IAppState) => {
 
   return (
     <div>
-      <main>
-        <p>Hamro IPO</p>
-        {!activeIpos.length && <p>No Active IPOs</p>}
-        {activeIpos.map((ipo, index) => {
-          return (
-            <p key={index} onClick={() => handleIpoClick(ipo)}>
-              {ipo.name}
-            </p>
-          );
-        })}
-      </main>
+      {!activeIpos.length && <p>No Active IPOs</p>}
+      {activeIpos.map((ipo, index) => {
+        return (
+          <p key={index} onClick={() => handleIpoClick(ipo)}>
+            {ipo.name}
+          </p>
+        );
+      })}
     </div>
   );
 };
@@ -38,7 +34,7 @@ const Home = (props: IHomeProps & IAppState) => {
 export const getServerSideProps = async (): Promise<GetServerSidePropsResult<IHomeProps>> => {
   const activeIpos = await getActiveIPOs();
   return {
-    props: { 
+    props: {
       activeIpos,
     },
   };

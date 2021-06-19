@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import Layout from "../components/Layout";
 import { IActiveIPO } from "../services/getActiveIPOs";
 import { useRouter } from "next/router";
+import Navbar from "../components/Navbar";
 
 export interface IAppState {
   selectedIpo: IActiveIPO;
@@ -16,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  
+
   useEffect(() => {
     const handleStart = () => {
       setIsLoading(true);
@@ -31,11 +32,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Layout>
-      {isLoading ? (
-        "Loading..."
-      ) : (
-        <Component {...pageProps} selectedIpo={selectedIpo} setSelectedIpo={setSelectedIpo} />
-      )}
+      <Navbar />
+      <div className="main-container">
+        {isLoading ? (
+          "Loading..."
+        ) : (
+          <Component {...pageProps} selectedIpo={selectedIpo} setSelectedIpo={setSelectedIpo} />
+        )}
+      </div>
     </Layout>
   );
 };
