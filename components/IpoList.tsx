@@ -14,8 +14,8 @@ const IpoList = (props: IIpoListProps) => {
         if (ipo.isFileUploaded) {
           return (
             <div key={index} className="ipo-list__item" onClick={() => handleIpoClick(ipo)}>
-              {ipo.name}
-              <ArrowCircleRightIcon className="ipo-list__icon" />
+              <span>{ipo.name}</span>
+              <span className="ipo-list__icon"><ArrowCircleRightIcon className="" /></span>
             </div>
           );
         }

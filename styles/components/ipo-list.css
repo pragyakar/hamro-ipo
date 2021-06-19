@@ -13,6 +13,7 @@
   @apply tracking-wide;
   @apply uppercase;
   @apply flex justify-between;
+  @apply text-sm;
 }
 
 .ipo-list__item:hover {
@@ -20,13 +21,13 @@
   cursor: pointer;
 }
 
-.ipo-list__icon {
+.ipo-list__icon svg {
   @apply h-6;
   @apply w-6;
   @apply text-gray-400;
   @apply opacity-0;
 }
 
-.ipo-list__item:hover .ipo-list__icon {
+.ipo-list__item:hover .ipo-list__icon svg {
   @apply opacity-100;
 }
