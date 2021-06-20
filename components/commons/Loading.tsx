@@ -3,7 +3,9 @@ import { CogIcon } from "@heroicons/react/outline";
 const Loading = () => {
   return (
     <div className="loader">
-      <CogIcon height="50" width="50" className="loader-icon" />
+      <div className="loader__container">
+      <CogIcon height="35" width="35" className="loader__icon" />
+      </div>
     </div>
   );
 };

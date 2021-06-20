@@ -3,8 +3,14 @@
   height: 70vh;
 }
 
-.loader-icon {
-  @apply text-gray-500;
+.loader__container {
+  @apply bg-gray-100;
+  @apply p-7;
+  @apply rounded-md;
+}
+
+.loader__icon {
+  @apply text-blue-400;
   animation: spin 3.5s linear infinite;
 }
 
