@@ -30,7 +30,6 @@ const Login = (props: ILoginProps) => {
       return;
     }
     
-    console.log('@pragyakar CONFIG', CONFIG);
     if (username === CONFIG.user && password === CONFIG.pass) {
       setIsLoggedIn(true);
     } else {
