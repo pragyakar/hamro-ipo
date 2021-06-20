@@ -1,0 +1,34 @@
+.ipo-list {
+  @apply bg-gray-100;
+  @apply text-gray-800;
+  @apply rounded-md;
+  @apply py-2;
+  width: 100%;
+  max-width: 500px;
+}
+
+.ipo-list__item {
+  @apply px-5;
+  @apply py-2;
+  @apply tracking-wide;
+  @apply uppercase;
+  @apply flex flex-row justify-between;
+  @apply text-sm;
+  @apply leading-6;
+}
+
+.ipo-list__item:hover {
+  @apply bg-gray-200;
+  cursor: pointer;
+}
+
+.ipo-list__icon svg {
+  @apply h-6;
+  @apply w-6;
+  @apply text-gray-400;
+  @apply opacity-0;
+}
+
+.ipo-list__item:hover .ipo-list__icon svg {
+  @apply opacity-100;
+}

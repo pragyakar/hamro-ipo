@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.logo__text {
+  font-size: 35px;
+}

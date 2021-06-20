@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  @apply p-5;
+  @apply text-center;
+  @apply bg-white;
+  @apply text-gray-600;
+  @apply font-light;
+}
+
+.footer--fixed {
+  @apply fixed;
+  @apply bottom-0;
+}
+
+.footer__heart {
+  @apply h-4;
+  @apply w-4;
+  @apply mb-1;
+  @apply text-blue-400;
+  display: inline-block;
+}
