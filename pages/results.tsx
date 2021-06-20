@@ -1,5 +1,5 @@
 import { GetServerSideProps, GetServerSidePropsResult } from "next";
-import { CONFIG } from "../config";
+import CONFIG from "../config";
 import { checkResult, IPeople, IResult } from "../services/checkResult";
 import { IAppState } from "./_app";
 

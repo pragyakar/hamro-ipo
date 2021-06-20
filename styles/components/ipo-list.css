@@ -12,8 +12,9 @@
   @apply py-2;
   @apply tracking-wide;
   @apply uppercase;
-  @apply flex justify-between;
+  @apply flex flex-row justify-between;
   @apply text-sm;
+  @apply leading-6;
 }
 
 .ipo-list__item:hover {

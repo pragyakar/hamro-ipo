@@ -6,8 +6,10 @@ import Layout from "../components/Layout";
 import { IActiveIPO } from "../services/getActiveIPOs";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
+import Login from "../components/Login";
 
 export interface IAppState {
+  isLoggedIn: boolean;
   selectedIpo: IActiveIPO;
   setSelectedIpo: (ipo: IActiveIPO) => void;
 }
@@ -17,6 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const [selectedIpo, setSelectedIpo] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const handleStart = () => {
@@ -32,14 +35,25 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <Layout>
-      <Navbar />
-      <div className="main-container">
-        {isLoading ? (
-          "Loading..."
-        ) : (
-          <Component {...pageProps} selectedIpo={selectedIpo} setSelectedIpo={setSelectedIpo} />
-        )}
-      </div>
+      {!isLoggedIn ? (
+        <Login setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <>
+          <Navbar />
+          <div className="main-container">
+            {isLoading ? (
+              "Loading..."
+            ) : (
+              <Component
+                isLoggedIn={isLoggedIn}
+                selectedIpo={selectedIpo}
+                setSelectedIpo={setSelectedIpo}
+                {...pageProps}
+              />
+            )}
+          </div>
+        </>
+      )}
     </Layout>
   );
 };

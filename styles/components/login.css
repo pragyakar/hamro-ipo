@@ -1,0 +1,70 @@
+.login {
+  @apply min-h-screen;
+  @apply flex items-center justify-center;
+  @apply bg-gray-50;
+  @apply py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.login__form-container {
+  @apply max-w-md w-full;
+  @apply space-y-8;
+}
+
+.login__form {
+  @apply mt-8;
+  @apply space-y-6;
+}
+
+.login__input-group {
+  @apply rounded-md;
+  @apply shadow-sm;
+  @apply -space-y-px;
+}
+
+.login__input {
+  @apply appearance-none;
+  @apply rounded-none;
+  @apply relative;
+  @apply block;
+  @apply w-full;
+  @apply px-3 py-2;
+  @apply border border-gray-300;
+  @apply placeholder-gray-500;
+  @apply text-gray-900;
+
+  @apply focus:outline-none;
+  @apply focus:ring-blue-500;
+  @apply focus:border-blue-500;
+  @apply focus:z-10;
+  @apply sm:text-sm;
+}
+
+.login__input--top {
+  @apply rounded-t-md;
+}
+
+.login__input--bottom {
+  @apply rounded-b-md;
+}
+
+.login__button {
+  @apply relative;
+  @apply w-full;
+  @apply flex justify-center;
+  @apply py-2 px-4;
+  @apply border border-transparent;
+  @apply text-sm font-medium;
+  @apply rounded-md;
+  @apply text-white;
+  @apply bg-blue-600 hover:bg-blue-700;
+  @apply focus:outline-none;
+  @apply focus:ring-2;
+  @apply focus:ring-offset-2;
+  @apply focus:ring-blue-500;
+}
+
+.login__error {
+  @apply text-center;
+  @apply text-red-500;
+  @apply text-sm;
+}
