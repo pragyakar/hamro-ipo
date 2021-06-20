@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <br>
+  <a href="https://hamro-ipo.vercel.app/">
+  <img src="https://user-images.githubusercontent.com/19926249/122668573-7b7f1800-d1d8-11eb-9014-e9616853ed03.png" alt="Hamro IPO" width="300"></a>
+  <br>
+</h1>
 
-## Getting Started
+<h4 align="center">Check NEPSE IPO allotment results</h4>
 
-First, run the development server:
+<p align="center">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+    <img src="https://img.shields.io/badge/-JavaScript-555555?style=flat&logo=javascript" alt="Javascript">
+  </a>
+  <a href="https://reactjs.org/docs/getting-started.html">
+    <img src="https://img.shields.io/badge/-React-555555?style=flat&logo=react" alt="React">
+  </a>
+  <a href="https://nodejs.org/en/docs/">
+    <img src="https://img.shields.io/badge/-Next.js-555555?style=flat&logo=next.js" alt="Next">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-setup">How To Setup</a> •
+  <a href="#deployment">Deployment</a> •
+  <a href="#contributing">Contributing</a> 
+</p>
+
+## Key Features
+- Setup multiple BOIDs (under development)
+- View list of all available IPOs
+- Select an IPO and check if it is alloted for all the configured BOIDs
+- Uses the open API by CDSC to get the results (iporesult.cdsc.com.np)
+
+## How To Setup
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this repository
+$ git clone git@github.com:pragyakar/hamro-ipo.git
+
+# Go into the repository
+$ cd hamro-ipo
+
+# Install dependencies
+$ yarn or npm install
+
+# Copy .env.sample file to create .env.local file and add values to the env variables
+$ cp .env.sample .env.local
+
+# Run in development mode
+$ yarn dev or npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
+With CI/CD setup, deployment is just one merge away. Merging into respective branches auto deploys the changes using vercel. `main` branch is set as production.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+I am open to contributions and collaboration so feel free to create a Pull Request or HMU anytime.
