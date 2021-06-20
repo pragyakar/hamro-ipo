@@ -7,6 +7,11 @@
   @apply font-light;
 }
 
+.footer--fixed {
+  @apply fixed;
+  @apply bottom-0;
+}
+
 .footer__heart {
   @apply h-4;
   @apply w-4;
