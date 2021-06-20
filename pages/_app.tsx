@@ -7,6 +7,7 @@ import { IActiveIPO } from "../services/getActiveIPOs";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Login from "../components/Login";
+import CONFIG from "../config";
 
 export interface IAppState {
   isLoggedIn: boolean;
@@ -15,7 +16,6 @@ export interface IAppState {
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  
   const router = useRouter();
   const [selectedIpo, setSelectedIpo] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -33,27 +33,25 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     router.events.on("routeChangeError", handleEnd);
   }, [router]);
 
+  const handleUserLogin = () => {
+    setIsLoggedIn(true);
+    router.push(`/`);
+  };
+
+  if (CONFIG.requireLogin && !isLoggedIn) {
+    return <Login handleUserLogin={handleUserLogin} />;
+  }
+
   return (
     <Layout>
-      {!isLoggedIn ? (
-        <Login setIsLoggedIn={setIsLoggedIn} />
-      ) : (
-        <>
-          <Navbar />
-          <div className="main-container">
-            {isLoading ? (
-              "Loading..."
-            ) : (
-              <Component
-                isLoggedIn={isLoggedIn}
-                selectedIpo={selectedIpo}
-                setSelectedIpo={setSelectedIpo}
-                {...pageProps}
-              />
-            )}
-          </div>
-        </>
-      )}
+      <Navbar />
+      <div className="main-container">
+        {isLoading ? (
+          "Loading..."
+        ) : (
+          <Component isLoggedIn={isLoggedIn} selectedIpo={selectedIpo} setSelectedIpo={setSelectedIpo} {...pageProps} />
+        )}
+      </div>
     </Layout>
   );
 };
