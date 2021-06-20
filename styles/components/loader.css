@@ -1,0 +1,19 @@
+.loader {
+  @apply flex items-center justify-center;
+  height: 70vh;
+}
+
+.loader-icon {
+  @apply text-gray-500;
+  animation: spin 3.5s linear infinite;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

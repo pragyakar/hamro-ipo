@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Login from "../components/Login";
 import CONFIG from "../config";
+import Loading from "../components/commons/Loading";
 
 export interface IAppState {
   isLoggedIn: boolean;
@@ -48,7 +49,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Navbar />
       <div className="main-container">
         {isLoading ? (
-          "Loading..."
+          <Loading />
         ) : (
           <Component isLoggedIn={isLoggedIn} selectedIpo={selectedIpo} setSelectedIpo={setSelectedIpo} {...pageProps} />
         )}
