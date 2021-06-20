@@ -37,8 +37,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     setIsLoggedIn(true);
     router.push(`/`);
   };
+  
 
-  if (CONFIG.requireLogin && !isLoggedIn) {
+  if (!!CONFIG.requireLogin && !isLoggedIn) {
     return <Login handleUserLogin={handleUserLogin} />;
   }
 

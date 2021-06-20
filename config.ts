@@ -11,7 +11,7 @@ const CONFIG: IConfig = {
   boids: process.env.NEXT_PUBLIC_BOIDS ? JSON.parse(process.env.NEXT_PUBLIC_BOIDS) : [],
   user: process.env.NEXT_PUBLIC_USERN || '',
   pass: process.env.NEXT_PUBLIC_PASSW || '',
-  requireLogin: !!process.env.NEXT_PUBLIC_REQUIRE_LOGIN,
+  requireLogin: process.env.NEXT_PUBLIC_REQUIRE_LOGIN === 'true' ? true : false,
 };
 
 
