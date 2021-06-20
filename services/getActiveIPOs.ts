@@ -29,9 +29,9 @@ export const getActiveIPOs = async (): Promise<IActiveIPO[]> => {
   const url = "https://iporesult.cdsc.com.np/result/companyShares/fileUploaded";
 
   try {
+    return dummyReponse.body;
     const { data } = await axios.get(url);
     return data.body;
-    return dummyReponse.body;
   } catch (error) {
     handleApiError(error);
     throw new Error(error);

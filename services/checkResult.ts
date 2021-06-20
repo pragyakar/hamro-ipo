@@ -20,6 +20,7 @@ const dummyResult = [
 export const checkResult = async (companyShareId: string | string[], peopleList: IPeople[]) => {
   const url = "https://iporesult.cdsc.com.np/result/result/check";
   
+  return dummyResult;
   try {
     let ipoResult: IResult[] = [];
     const promises: any = [];
@@ -42,7 +43,6 @@ export const checkResult = async (companyShareId: string | string[], peopleList:
       });
     });
     return ipoResult;
-    return dummyResult;
   } catch (error) {
     handleApiError(error);
     throw new Error(error);
