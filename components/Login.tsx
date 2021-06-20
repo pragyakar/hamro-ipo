@@ -29,7 +29,6 @@ const Login = (props: ILoginProps) => {
       setError("All fields are required");
       return;
     }
-    
     if (username === CONFIG.user && password === CONFIG.pass) {
       setIsLoggedIn(true);
     } else {
@@ -46,7 +45,7 @@ const Login = (props: ILoginProps) => {
           <div className="login__input-group">
             <div>
               <label htmlFor="username" className="sr-only">
-                Email address
+                Username
               </label>
               <input
                 id="username"
