@@ -29,7 +29,7 @@ export const getActiveIPOs = async (): Promise<IActiveIPO[]> => {
   const url = "https://iporesult.cdsc.com.np/result/companyShares/fileUploaded";
 
   try {
-    const { data } = await axios.get(url);
+    // const { data } = await axios.get(url);
     return dummyReponse.body;
     // return data.body;
   } catch (error) {

@@ -12,6 +12,12 @@ export interface IResult {
   result: boolean;
 }
 
+const dummyResult = [
+  { name: 'Pragyakar', boid: '1301390000058519', result: true },
+  { name: 'Shradha', boid: '1301390000058504', result: false }
+]
+
+
 export const checkResult = async (companyShareId: string | string[], peopleList: IPeople[]) => {
   const url = "https://iporesult.cdsc.com.np/result/result/check";
   
@@ -36,8 +42,8 @@ export const checkResult = async (companyShareId: string | string[], peopleList:
     //     });
     //   });
     // });
-        
-    return ipoResult;
+
+    return dummyResult;
   } catch (error) {
     handleApiError(error);
     throw new Error(error);
